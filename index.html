@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>单词小英雄 · 四年级英语记忆游戏</title>
+<meta name="description" content="按单元循环闯关的小学英语单词记忆游戏，收录 Unit 1-4 与 Reading 1-3 全部词汇" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="css/games.css" />
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<div id="app" class="app">
+  <header id="topbar" class="topbar"></header>
+  <main id="view" class="view" tabindex="-1"></main>
+  <footer class="hintbar" id="hintbar">
+    <span class="hintbar-inner">数字键 1–4 选答案 · 回车下一题 · Esc 返回首页</span>
+  </footer>
+</div>
+
+<div id="toast-root" class="toast-root" aria-live="polite"></div>
+<div id="fx-root" class="fx-root" aria-hidden="true"></div>
+<div id="modal-root" class="modal-root"></div>
+
+<script src="js/data/words.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/audio.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/core/progress.js"></script>
+<script src="js/core/router.js"></script>
+<script src="js/core/kit.js"></script>
+<script src="js/games/quiz-meaning.js"></script>
+<script src="js/games/listening.js"></script>
+<script src="js/games/spelling.js"></script>
+<script src="js/games/match.js"></script>
+<script src="js/games/whack.js"></script>
+<script src="js/games/memory.js"></script>
+<script src="js/pages/home.js"></script>
+<script src="js/pages/wordbook.js"></script>
+<script src="js/pages/play.js"></script>
+<script src="js/pages/report.js"></script>
+<script src="js/pages/settings.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

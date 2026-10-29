@@ -1,0 +1,13 @@
+# 编辑器 / 工具产生的本地文件
+.codebuddy/
+.shots/
+.vscode/
+.idea/
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 依赖（本项目零依赖，仅作保险）
+node_modules/
