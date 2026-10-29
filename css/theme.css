@@ -271,3 +271,42 @@ p{margin:0}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
+
+/* ---------------- 手机竖屏（≤600px） ---------------- */
+@media (max-width:600px){
+  body{font-size:15px}
+  .card{border-radius:16px;padding:16px}
+  .btn{padding:13px 18px;font-size:15px;border-radius:14px}
+  .btn-sm{padding:9px 13px;font-size:13px}
+  .icon-btn{width:36px;height:36px;border-radius:11px}
+
+  .toast-root{top:64px;left:12px;right:12px;transform:none}
+  .toast{font-size:13.5px;padding:10px 16px;text-align:center;width:100%}
+
+  .modal-root.on{padding:10px}
+  .modal-card{width:100%;max-height:90vh;border-radius:18px;padding:18px}
+
+  /* 报告页表格在手机上改成两列信息，避免横向溢出 */
+  .wrong-table{font-size:12.5px}
+  .wrong-table th:nth-child(5),.wrong-table td:nth-child(5){display:none}
+  .wrong-table th:nth-child(4),.wrong-table td:nth-child(4){display:none}
+  .wrong-table .w-en{font-size:13.5px}
+
+  .week-bars{gap:6px}
+  .stack-bar{height:14px}
+  .legend{gap:10px;font-size:11.5px}
+  .setting-row{flex-direction:column;align-items:stretch;gap:10px;padding:14px 0}
+  .setting-row .seg{width:100%}
+  .setting-row .seg button{flex:1}
+  .seg button{padding:9px 10px;font-size:13px}
+}
+
+/* 触屏设备去掉依赖 hover 的位移效果 */
+@media (hover:none){
+  .btn:hover,.icon-btn:hover,.speak-btn:hover{transform:none}
+  .mcard:hover{transform:none;box-shadow:none}
+  .mcard:hover::after{transform:translateX(-120%)}
+  .opt:hover{transform:none;background:var(--paper);border-color:var(--line)}
+  .letter:hover{transform:none}
+  .mole:hover .mtext{border-color:#F0D9C4;background:#fff}
+}

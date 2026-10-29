@@ -100,12 +100,12 @@ window.EWG = window.EWG || {};
       EWG.ui.toast("这台电脑存不了成绩，本次进度只在当前窗口有效", "warn");
     }
 
-    // 语音可用性提示（延迟一点，等 voices 加载）
-    setTimeout(function () {
-      if (!EWG.audio.hasVoice()) {
-        EWG.ui.toast("暂时读不出英文发音，可以先玩看词选义哦", "warn");
+    // 只有真的探测到「既没有本地音频、系统语音也用不了」时才提示
+    EWG.audio.onStateChange(function (s) {
+      if (s === "fail" && !EWG.audio.hasAudioPack()) {
+        EWG.ui.toast("这台手机暂时读不出英文，先用「看中文选英文」练吧", "warn");
       }
-    }, 1600);
+    });
   }
 
   EWG.app = {

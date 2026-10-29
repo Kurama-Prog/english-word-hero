@@ -297,6 +297,9 @@ EWG.pages = EWG.pages || {};
         finish: function () { endRound(); }
       };
 
+      // 预热本局要用的发音，减少第一次点喇叭的等待
+      try { EWG.audio.preload(items); } catch (e) { /* noop */ }
+
       try {
         live.instance = game.create(ctx);
       } catch (err) {

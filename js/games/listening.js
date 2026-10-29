@@ -32,18 +32,18 @@ window.EWG = window.EWG || {};
       function render() {
         if (idx >= items.length) { ctx.finish(); return; }
         locked = false;
-        speechOk = EWG.audio.hasVoice();
+        speechOk = EWG.audio.canSpeak();
         var w = items[idx];
         var opts = EWG.kit.options(w, "en", 4);
 
         var prompt = speechOk
           ? `<div class="q-prompt-label">听一听，选出你听到的单词</div>
              <button class="big-speaker" type="button" id="qSpeaker" aria-label="播放发音">🔊</button>
-             <div class="q-hint" id="qCn"></div>
+             <div class="q-hint" id="qCn">点一下喇叭，听清这个单词～</div>
              <button class="hint-chip" type="button" id="qHint">🐣 听不清？悄悄看一眼中文</button>`
           : `<div class="q-prompt-label">看中文，选出正确的英文</div>
              <div class="q-cn">${EWG.ui.esc(w.cn)}</div>
-             <div class="q-hint">这台电脑暂时读不出声音，我们换一种方式来练～</div>`;
+             <div class="q-hint">这台手机暂时听不到发音，我们换一种方式来练～</div>`;
 
         root.innerHTML = `
           <div class="q-center">${prompt}</div>

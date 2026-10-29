@@ -342,3 +342,61 @@
   .slot{width:42px;height:54px;font-size:22px}
   .letter{width:46px;height:52px;font-size:20px}
 }
+
+/* ---------------- 手机竖屏（≤600px） ---------------- */
+@media (max-width:600px){
+  .play-wrap{gap:10px}
+  .play-head{padding:10px 12px;gap:8px;border-radius:16px}
+  .play-head .ph-ico{width:34px;height:34px;font-size:17px;border-radius:11px}
+  .play-head .ph-title{font-size:15px}
+  .play-head .ph-sub{display:none}
+  .combo-badge{font-size:11px;padding:3px 8px}
+  .q-count{font-size:12px;padding:4px 9px}
+  .icon-btn{width:34px;height:34px}
+
+  .stage{padding:16px 12px;min-height:0}
+  .q-word{font-size:clamp(30px,10vw,44px);line-height:1.15}
+  .q-word.sm{font-size:26px}
+  .q-cn{font-size:20px}
+  .q-prompt-label{font-size:12px;padding:4px 10px}
+  .q-hint{font-size:12.5px}
+  .big-speaker{width:84px;height:84px;font-size:32px}
+  .hint-chip{font-size:12.5px;padding:7px 13px}
+
+  .options{grid-template-columns:1fr;gap:10px;margin-top:16px}
+  .opt{padding:14px 14px;min-height:56px;font-size:16px;border-radius:16px}
+  .opt .key{width:24px;height:24px;font-size:12px}
+
+  .feedback{min-height:48px;margin-top:12px;padding:10px 14px;font-size:14px}
+
+  .spell-slots{gap:6px;margin-top:18px}
+  .slot{width:34px;height:44px;font-size:18px;border-radius:10px}
+  .letter-tray{gap:7px;margin-top:16px;min-height:48px}
+  .letter{width:38px;height:44px;font-size:17px;border-radius:11px}
+
+  .match-head{margin-bottom:10px;align-items:flex-start;gap:8px}
+  .match-head > div{flex:1;min-width:0}
+  .match-head .ph-title{font-size:13px!important;line-height:1.35}
+  .match-head .q-hint{display:none}
+  .match-grid,.mem-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .mcard{min-height:66px;padding:8px 6px;border-radius:12px}
+  .mcard .en{font-size:13px}
+  .mcard .cn{font-size:12.5px}
+  .mem-card{height:82px}
+  .mem-front{font-size:13px}
+
+  .holes{gap:6px}
+  .hole{min-height:72px;border-radius:12px}
+  .mole .moji{font-size:18px;margin-bottom:2px}
+  .mole .mtext{font-size:12px;padding:2px 8px;max-width:100%;white-space:normal;line-height:1.25;text-align:center}
+  .whack-prompt .q-word,.whack-prompt h2{font-size:26px}
+
+  .result-star-row{font-size:28px}
+  .result-title{font-size:22px}
+  .result-badges{gap:8px}
+  .rbadge b{font-size:17px}
+  .result-actions{gap:8px}
+  .result-actions .btn{flex:1;justify-content:center;padding:13px 10px}
+  .result-next{padding:12px 14px;gap:10px}
+  .result-next .rn-go{font-size:17px}
+}

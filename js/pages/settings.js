@@ -54,7 +54,9 @@ EWG.pages = EWG.pages || {};
           <div class="setting-row">
             <div class="sr-label">
               <b>英文朗读</b>
-              <span id="voiceInfo">当前语音：${EWG.ui.esc(EWG.audio.voiceName())}</span>
+              <span id="voiceInfo">${EWG.audio.hasAudioPack()
+                ? "本地发音包 · " + Object.keys(EWG.AUDIO_MAP || {}).length + " 个单词已打包，离线也能播"
+                : "系统语音 · " + EWG.ui.esc(EWG.audio.voiceName())}</span>
             </div>
             <button class="btn btn-sm btn-ghost" type="button" id="testVoice">试听 classroom</button>
           </div>
@@ -140,9 +142,10 @@ EWG.pages = EWG.pages || {};
 
       /* ---- 试听 ---- */
       document.getElementById("testVoice").addEventListener("click", function () {
-        var ok = EWG.audio.speak("classroom");
-        if (!ok) EWG.ui.toast("这台电脑暂时读不出英文", "warn");
-        else EWG.ui.toast("听到声音了吗？如果没有，请检查系统音量", "ok");
+        var w = EWG.getWord("u1-classroom") || { id: "u1-classroom", en: "classroom" };
+        var ok = EWG.audio.speak(w);
+        if (!ok) EWG.ui.toast("这台手机暂时听不到发音，我们先看中文练吧", "warn");
+        else EWG.ui.toast("听到 classroom 了吗？没听到就调大手机音量", "ok");
       });
 
       /* ---- 清空 ---- */

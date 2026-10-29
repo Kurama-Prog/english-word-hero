@@ -33,7 +33,7 @@ window.EWG = window.EWG || {};
       e.stopPropagation();
       var text = btn.getAttribute("data-speak");
       var ok = EWG.audio.speak(text);
-      if (!ok) { toast("这台电脑暂时读不出英文", "warn"); return; }
+      if (!ok) { toast("这台手机暂时听不到发音，我们先看中文练吧", "warn"); return; }
       btn.classList.add("playing");
       setTimeout(function () { btn.classList.remove("playing"); }, 900);
     }, true);
@@ -193,9 +193,10 @@ window.EWG = window.EWG || {};
 
   /* ---------------- 朗读按钮 ---------------- */
   function speakBtn(text, cls) {
-    var disabled = EWG.audio.hasVoice() ? "" : " disabled";
+    // 不再按可用性禁用：很多手机浏览器首次 getVoices() 返回空，
+    // 禁用会让按钮彻底点不动。改为始终可点，失败时给友好提示。
     return '<button class="speak-btn ' + (cls || "") + '" type="button" data-speak="' + esc(text) +
-      '" aria-label="朗读 ' + esc(text) + '"' + disabled + '>🔊</button>';
+      '" aria-label="朗读 ' + esc(text) + '">🔊</button>';
   }
 
   function refreshTopbar() {

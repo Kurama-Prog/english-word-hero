@@ -11,3 +11,7 @@ Desktop.ini
 
 # 依赖（本项目零依赖，仅作保险）
 node_modules/
+
+# 发音包生成过程中的中间文件
+tools/_raw/
+tools/_words.json
